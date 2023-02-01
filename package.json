@@ -6,11 +6,11 @@
   "scripts": {
     "check-types": "tsc --project tsconfig.json",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
-    "dev:electron": "wait-on tcp:3000 && cross-env NODE_ENV=development webpack --config webpack.electron.config.js && electron .",
     "dev:react": "cross-env NODE_ENV=development webpack-dev-server --config webpack.react.config.js",
+    "dev:electron": "wait-on tcp:3000 && cross-env NODE_ENV=development webpack --config webpack.electron.config.js && electron .",
     "dev": "concurrently -k \"npm run dev:react\" \"npm run dev:electron\"",
-    "build:electron": "cross-env NODE_ENV=production webpack --config webpack.electron.config.js && electron .",
     "build:react": "cross-env NODE_ENV=production webpack --config webpack.react.config.js",
+    "build:electron": "cross-env NODE_ENV=production webpack --config webpack.electron.config.js && electron .",
     "build": "npm run check-types && npm run lint && npm run build:react && npm run build:electron"
   },
   "author": "",
@@ -24,6 +24,7 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
     "babel-loader": "^9.1.2",
