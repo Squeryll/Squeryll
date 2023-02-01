@@ -11,7 +11,7 @@
     "dev": "concurrently -k \"npm run dev:react\" \"npm run dev:electron\"",
     "build:electron": "cross-env NODE_ENV=production webpack --config webpack.electron.config.js && electron .",
     "build:react": "cross-env NODE_ENV=production webpack --config webpack.react.config.js",
-    "build": "npm run check-types && npm run build:react && npm run build:electron"
+    "build": "npm run check-types && npm run lint && npm run build:react && npm run build:electron"
   },
   "author": "",
   "license": "MIT",
