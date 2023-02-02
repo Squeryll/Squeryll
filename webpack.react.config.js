@@ -36,7 +36,28 @@ module.exports = {
         }
       },
       {
+        test: /\.module\.s(a|c)ss$/,
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: isDev,
+              localIdentName: '[name]_[local]_[contenthash:base64:5]'
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDev
+            }
+          }
+        ]
+      },
+      {
         test: /\.s(a|c)ss$/,
+        exclude: /\.module\.s(a|c)ss$/,
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
