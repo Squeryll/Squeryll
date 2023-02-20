@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import './App.scss'
+import Connection from './pages/Connection'
 
 const App: FC = () => {
-  return <div className="container">Welcome To Squeryll</div>
+  return <Connection />
 }
 
 export default App
